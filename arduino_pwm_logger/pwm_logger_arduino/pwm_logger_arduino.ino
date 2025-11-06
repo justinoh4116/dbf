@@ -1,21 +1,21 @@
 
-#define NUM_CHANNELS 4
+#define NUM_CHANNELS 5
 #define MODE_CHANNEL 3
 
-const uint8_t pinRudderIn = 5;
-const uint8_t pinLeftAilIn = 6;
-const uint8_t pinRightAilIn = 7;
-const uint8_t pinEleIn = 8;
+const uint8_t pinLeftAilIn = 3;
+const uint8_t pinRightAilIn = 4;
+const uint8_t pinLeftEleIn = 5;
+const uint8_t pinRightEleIn = 6;
+const uint8_t pinRudderIn = 7;
 
 uint8_t idx;
 
 const uint8_t grPins[] = {
-  pinRudderIn,
   pinLeftAilIn,
   pinRightAilIn,
-  pinEleIn
-  // pinModeIn
-
+  pinLeftEleIn,
+  pinRightEleIn,
+  pinRudderIn
 };
 
 typedef struct structChannels {

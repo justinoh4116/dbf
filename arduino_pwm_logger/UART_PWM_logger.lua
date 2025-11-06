@@ -19,7 +19,7 @@ local valid = true
 local term
 
 -- number of terms we expect in the message
-local num_terms = 4
+local num_terms = 5
 -- maximum length of terms each term we expect
 local max_length = 20
 
@@ -100,7 +100,7 @@ function update()
             -- format characters specify the type of variable to be logged, see AP_Logger/README.md
             -- not all format types are supported by scripting only: i, L, e, f, n, M, B, I, E, N, and Z
             -- Note that Lua automatically adds a timestamp in micro seconds
-            logger:write('SCR','LeftAil,RightAil,Ele,Rud','IIII',table.unpack(log_data))
+            logger:write('SCR','LeftAil,RightAil,LeftEle,RightEle,Rud','IIIII',table.unpack(log_data))
 
             -- reset for the next message
             log_data = {}
