@@ -7,10 +7,11 @@ if not port then
     gcs:send_text(0, "No Scripting Serial Port")
     return
 end
-
 -- begin the serial port
 port:begin(115200)
 port:set_flow_control(0)
+
+gcs:send_text(0, "PWM Logging Started")
 
 -- table for strings used in decoding
 local log_data = {}
