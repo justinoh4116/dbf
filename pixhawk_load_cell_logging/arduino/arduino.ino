@@ -6,7 +6,6 @@ uint32_t timeNow;
 uint32_t timeLast;
 
 // value was measured with a total gain of 2200
-float ADC_TO_NEWTONS = 0.239;
 float values[3];
 
 void setup() {
@@ -21,11 +20,10 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   timeNow = millis();
-  if (timeNow - timeLast >= 20) {
-    // multiply by scaling factor and subtract constant so that we can measure negative values
-    values[0] = analogRead(PIN_X) * ADC_TO_NEWTONS - 115;
-    values[1] = analogRead(PIN_Y) * ADC_TO_NEWTONS - 115;
-    values[2] = analogRead(PIN_Z) * ADC_TO_NEWTONS - 200; // almost all of our z axis load will be negative, so we subtract a larger constant here
+  if (timeNow - timeLast >= 5) {
+    values[0] = analogRead(PIN_X);
+    values[1] = analogRead(PIN_Y);
+    values[2] = analogRead(PIN_Z); 
     timeLast = timeNow;
     Serial.print(values[0]);
     Serial.print(",");
