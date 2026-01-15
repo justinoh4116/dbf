@@ -137,10 +137,10 @@ end
 
 -- additional function that runs periodically to update gcs via string messages
 function gcs_text_message()
-  gcs:send_text(6, "Current load cell and airspeed values")
-  gcs:send_text(6, "LOAD_X: " .. current_values[1] .. "N")
-  gcs:send_text(6, "LOAD_Y: " .. current_values[2] .. "N")
-  gcs:send_text(6, "LOAD_Z: " .. current_values[3] .. "N")
+  gcs:send_text(6, "Current load cell readings (ADC values)")
+  gcs:send_text(6, "LOAD_X: " .. current_values[1])
+  gcs:send_text(6, "LOAD_Y: " .. current_values[2])
+  gcs:send_text(6, "LOAD_Z: " .. current_values[3])
   -- gcs:send_text(6, "AIRSPEED: " .. current_values[4] .. "ft/s")
   if not (arming:is_armed()) then
     gcs:send_text(6, "Logging not active, arm system to start logging to SD Card")
