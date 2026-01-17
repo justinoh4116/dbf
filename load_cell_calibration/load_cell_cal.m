@@ -3,8 +3,9 @@
 calibration_weights = [0 1.707 2.965 5.014 10.02 12.069 13.327 15.034]; % in kilograms
 calibration_adcs = [7.1 44.6 73.8 121.3 237.2 284.8 314.2 354.1];
 calibration_axis = 3; % the axis which was used to calibrate
+calibration_gain = 1100; % the gain set on the axis used to calibrate
 
-set_gains = [1100 1100 1100];
+set_gains = [11000 11000 2200];
 g = 9.81;
 
 % values provided by tacuna systems calibration
@@ -26,7 +27,7 @@ plot(x,fity)
 scatter(x, y)
 hold off
 
-adc_to_newtons = ((ones(1,3)*set_gains(calibration_axis))./set_gains) ...
+adc_to_newtons = ((ones(1,3)*calibration_gain)./set_gains) ...
                 .* ((ones(1,3)*given_gains(calibration_axis)./given_gains) ...
                 .* ((ones(1,3)*given_sensitivities(calibration_axis))./given_sensitivities)) ...
                 .* b(2) .* g
