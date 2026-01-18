@@ -8,7 +8,7 @@ if not port then
   return
 end
 -- begin the serial port
-port:begin(115200)
+port:begin(19200)
 port:set_flow_control(0)
 
 gcs:send_text(0, "Load cell logging active")

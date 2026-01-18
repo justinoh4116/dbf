@@ -6,11 +6,11 @@ uint32_t timeNow;
 uint32_t timeLast;
 
 // value was measured with a total gain of 2200
-float values[3];
+uint32_t values[3];
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(115200);
+  Serial.begin(19200);
 
   pinMode(PIN_X, INPUT);
   pinMode(PIN_Y, INPUT);
