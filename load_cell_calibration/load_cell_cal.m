@@ -5,7 +5,7 @@ calibration_adcs = [7.1 44.6 73.8 121.3 237.2 284.8 314.2 354.1];
 calibration_axis = 3; % the axis which was used to calibrate
 calibration_gain = 1100; % the gain set on the axis used to calibrate
 
-set_gains = [11000 11000 2200];
+set_gains = [11000 5500 2200];
 g = 9.81;
 
 % values provided by tacuna systems calibration
